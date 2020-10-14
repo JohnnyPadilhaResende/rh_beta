@@ -1,0 +1,5 @@
+development:
+  adapter: postgresql
+  database: rh_core
+  username: rh_user
+  password: rh123

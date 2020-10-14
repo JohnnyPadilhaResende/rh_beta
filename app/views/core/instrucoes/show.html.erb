@@ -1,0 +1,21 @@
+<div class="page-header">
+  <%= link_to core_instrucoes_path, class: 'btn btn-default' do %>
+    All Core_instrucoes
+  <% end %>
+  <%= link_to edit_core_instruco_path(@core_instruco), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show core_instruco</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Cdg grau instrucao:</dt>
+  <dd><%= @core_instruco.cdg_grau_instrucao %></dd>
+
+  <dt>Nme curso:</dt>
+  <dd><%= @core_instruco.nme_curso %></dd>
+
+  <dt>Nme instituicao ensino:</dt>
+  <dd><%= @core_instruco.nme_instituicao_ensino %></dd>
+
+</dl>

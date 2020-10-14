@@ -1,0 +1,47 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Core_instrucoes</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_core_instruco_path, class: 'btn btn-primary' do %>
+    Add New Instrucao
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th>Cdg grau instrucao</th>
+            <th>Nme curso</th>
+            <th>Nme instituicao ensino</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @core_instrucoes.each do |core_instruco| %>
+        <%= content_tag :tr, id: dom_id(core_instruco), class: dom_class(core_instruco) do %>
+          
+
+                      <td><%= core_instruco.cdg_grau_instrucao %></td>
+                      <td><%= core_instruco.nme_curso %></td>
+                      <td><%= core_instruco.nme_instituicao_ensino %></td>
+          
+          
+            <td><%= link_to 'Show', core_instruco %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

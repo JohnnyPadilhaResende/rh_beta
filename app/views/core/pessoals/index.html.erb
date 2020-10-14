@@ -1,0 +1,51 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Core_pessoals</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_core_pessoal_path, class: 'btn btn-primary' do %>
+    Add New Pessoal
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th>Cdg ordem</th>
+            <th>Nmr cpf</th>
+            <th>Nme pessoa</th>
+            <th>Sexo</th>
+            <th>Dta nascimento</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @core_pessoals.each do |core_pessoal| %>
+        <%= content_tag :tr, id: dom_id(core_pessoal), class: dom_class(core_pessoal) do %>
+          
+
+                      <td><%= core_pessoal.cdg_ordem %></td>
+                      <td><%= core_pessoal.nmr_cpf %></td>
+                      <td><%= core_pessoal.nme_pessoa %></td>
+                      <td><%= core_pessoal.sexo %></td>
+                      <td><%= core_pessoal.dta_nascimento %></td>
+          
+          
+            <td><%= link_to 'Show', core_pessoal %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

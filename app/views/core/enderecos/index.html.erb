@@ -1,0 +1,55 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Core_enderecos</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_core_endereco_path, class: 'btn btn-primary' do %>
+    Add New Endereco
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th>Cdg ordem</th>
+            <th>Nme logradouro</th>
+            <th>Cdg logradouro</th>
+            <th>Nmr lote</th>
+            <th>Nmr quadra</th>
+            <th>Desc complemento</th>
+            <th>Nmr cep</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @core_enderecos.each do |core_endereco| %>
+        <%= content_tag :tr, id: dom_id(core_endereco), class: dom_class(core_endereco) do %>
+          
+
+                      <td><%= core_endereco.cdg_ordem %></td>
+                      <td><%= core_endereco.nme_logradouro %></td>
+                      <td><%= core_endereco.cdg_logradouro %></td>
+                      <td><%= core_endereco.nmr_lote %></td>
+                      <td><%= core_endereco.nmr_quadra %></td>
+                      <td><%= core_endereco.desc_complemento %></td>
+                      <td><%= core_endereco.nmr_cep %></td>
+          
+          
+            <td><%= link_to 'Show', core_endereco %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

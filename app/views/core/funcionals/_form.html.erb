@@ -1,0 +1,59 @@
+<%= form_with(model: core_funcional, local: true) do |form| %>
+  <% if core_funcional.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(core_funcional.errors.count, "error") %> prohibited this core_funcional from being saved:</h2>
+
+      <ul>
+      <% core_funcional.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :cdg_funcao %>
+    <%= form.number_field :cdg_funcao, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cdg_ordem %>
+    <%= form.number_field :cdg_ordem, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cdg_funcional %>
+    <%= form.number_field :cdg_funcional, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :status %>
+    <%= form.number_field :status, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :ref_anomes %>
+    <%= form.number_field :ref_anomes, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :dta_admissao %>
+    <%= form.date_select :dta_admissao, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <% if core_funcional.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', core_funcional, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if core_funcional.persisted? %>
+      <%= link_to "Cancel", core_funcional, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", core_funcionals_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

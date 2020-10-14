@@ -1,0 +1,53 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Core_funcionals</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_core_funcional_path, class: 'btn btn-primary' do %>
+    Add New Funcional
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th>Cdg funcao</th>
+            <th>Cdg ordem</th>
+            <th>Cdg funcional</th>
+            <th>Status</th>
+            <th>Ref anomes</th>
+            <th>Dta admissao</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @core_funcionals.each do |core_funcional| %>
+        <%= content_tag :tr, id: dom_id(core_funcional), class: dom_class(core_funcional) do %>
+          
+
+                      <td><%= core_funcional.cdg_funcao %></td>
+                      <td><%= core_funcional.cdg_ordem %></td>
+                      <td><%= core_funcional.cdg_funcional %></td>
+                      <td><%= core_funcional.status %></td>
+                      <td><%= core_funcional.ref_anomes %></td>
+                      <td><%= core_funcional.dta_admissao %></td>
+          
+          
+            <td><%= link_to 'Show', core_funcional %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

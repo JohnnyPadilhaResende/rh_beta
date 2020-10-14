@@ -1,0 +1,27 @@
+<div class="page-header">
+  <%= link_to core_pessoals_path, class: 'btn btn-default' do %>
+    All Core_pessoals
+  <% end %>
+  <%= link_to edit_core_pessoal_path(@core_pessoal), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show core_pessoal</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Cdg ordem:</dt>
+  <dd><%= @core_pessoal.cdg_ordem %></dd>
+
+  <dt>Nmr cpf:</dt>
+  <dd><%= @core_pessoal.nmr_cpf %></dd>
+
+  <dt>Nme pessoa:</dt>
+  <dd><%= @core_pessoal.nme_pessoa %></dd>
+
+  <dt>Sexo:</dt>
+  <dd><%= @core_pessoal.sexo %></dd>
+
+  <dt>Dta nascimento:</dt>
+  <dd><%= @core_pessoal.dta_nascimento %></dd>
+
+</dl>

@@ -1,0 +1,33 @@
+<div class="page-header">
+  <%= link_to core_enderecos_path, class: 'btn btn-default' do %>
+    All Core_enderecos
+  <% end %>
+  <%= link_to edit_core_endereco_path(@core_endereco), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show core_endereco</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Cdg ordem:</dt>
+  <dd><%= @core_endereco.cdg_ordem %></dd>
+
+  <dt>Nme logradouro:</dt>
+  <dd><%= @core_endereco.nme_logradouro %></dd>
+
+  <dt>Cdg logradouro:</dt>
+  <dd><%= @core_endereco.cdg_logradouro %></dd>
+
+  <dt>Nmr lote:</dt>
+  <dd><%= @core_endereco.nmr_lote %></dd>
+
+  <dt>Nmr quadra:</dt>
+  <dd><%= @core_endereco.nmr_quadra %></dd>
+
+  <dt>Desc complemento:</dt>
+  <dd><%= @core_endereco.desc_complemento %></dd>
+
+  <dt>Nmr cep:</dt>
+  <dd><%= @core_endereco.nmr_cep %></dd>
+
+</dl>
