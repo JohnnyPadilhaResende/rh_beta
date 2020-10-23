@@ -50,3 +50,6 @@ self.table_name = "core.instrucao"
 
 rake db:migrate
 ::::MIGRATIONS::::
+
+
+teste
