@@ -51,3 +51,27 @@ self.table_name = "core.instrucao"
 rake db:migrate
 ::::MIGRATIONS::::
 
+
+
+
+
+  Engine Departamento
+  Branch: NomeSquad/NomeProgramador-1 
+  Squad: Star
+    Ana Luisa
+    Murillo
+    Jean 
+
+  Engine Cargo
+  Branch: NomeSquad/NomeProgramador-1
+  Squad: Suicide
+    Ygor - Rev
+    Adriano Cesar 
+
+  Engine Curso 
+  Branch: NomeSquad/NomeProgramador-1
+  Squad: 
+    Igor Tadayuki 
+    Victor Augusto
+    Ving
+
