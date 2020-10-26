@@ -1,0 +1,13 @@
+<%= form_for @core_nivel, url: core_niveis_path do |form| %>
+
+    <%= form.label :cdg_ordem %>
+    <%= form.number_field :cdg_ordem, class: 'form-control' %>
+
+    <br/>
+
+    <%= form.label :xp %>
+    <%= form.number_field :xp, class: 'form-control' %>
+
+
+    <%= form.submit class: 'btn btn-primary' %>
+<% end %>

@@ -4,7 +4,7 @@ class Core::PessoalsController < ApplicationController
   # GET /core/pessoals
   # GET /core/pessoals.json
   def index
-    @core_pessoals = Core::Pessoal.all
+    @core_pessoals = Core::Pessoal.all   
   end
 
   # GET /core/pessoals/1

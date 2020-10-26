@@ -1,0 +1,13 @@
+
+
+<%= link_to new_core_nivei_path do %>
+    novo nível
+    <% end %>
+
+
+    <br/>
+    
+<% @niveis.each do |nvl| %>
+    <%= nvl.xp %>
+    <br/>
+<% end %>
