@@ -16,15 +16,12 @@ Rails.application.routes.draw do
   namespace :core do
     resources :pessoals
   end
-<<<<<<< Updated upstream
-=======
   namespace :core do
     resources :niveis
   end
   
   resources :testes
 
->>>>>>> Stashed changes
   get '/privacy', to: 'home#privacy'
   get '/terms', to: 'home#terms'
     authenticate :user, lambda { |u| u.admin? } do
