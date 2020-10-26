@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   namespace :core do
     resources :pessoals
   end
+  namespace :core do
+    resources :niveis
+  end
   
   resources :testes
 
