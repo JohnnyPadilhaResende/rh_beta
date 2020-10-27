@@ -2,6 +2,9 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
   namespace :core do
+    resources :contatos
+  end
+  namespace :core do
     resources :instrucoes
   end
   namespace :core do
