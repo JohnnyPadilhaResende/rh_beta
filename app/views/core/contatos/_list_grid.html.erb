@@ -10,13 +10,23 @@
     </thead>
 
     <tbody>
-      <% @contatos.each do |contato| %>
-        <%= content_tag :tr, id: dom_id(contato), class: dom_class(contato) do %>
-                      <td><%= contato.core_pessoal.nme_pessoa %></td>
-                      <td><%= contato.end_telefone %></td>
-                      <td><%= contato.end_email %></td> 
-                      <td><%= link_to 'Destroy', contato, method: :delete, class: "text-danger", data: { confirm: 'Você tem certeza?' } %></td>              
-        <% end %>
+    <% @pessoas.each do |pessoa| %>
+      <%= content_tag :tr, id: dom_id(pessoa), class: dom_class(pessoa) do %>
+                    <td><%= pessoa.nme_pessoa %></td>
+                    <td><%= pessoa&.core_contato&.end_telefone %></td>
+                    <td><%= pessoa&.core_contato&.end_email %></td> 
+                    <td>
+                      <%= link_to 'Destroy', 
+                      pessoa&.core_contato, 
+                      method: :delete, 
+                      class: "text-danger", 
+                        data: { confirm: 'Você tem certeza?' } if pessoa&.core_contato.present? %>
+
+                        <%= link_to new_core_contato_path(cdg_ordem: pessoa.cdg_ordem), method: :get do %>
+                          Edit
+                        <% end unless pessoa&.core_contato.present? %>
+                      </td> 
+                      <% end %>                      
       <% end %>
     </tbody>
   </table>

@@ -3,7 +3,29 @@ class Core::ContatosController < ApplicationController
   before_action :set_contato, only: [:destroy]
 
   def index
-    @contatos = Core::Contato.all
+    @pessoas = Core::Pessoal.all
+  end
+
+  def new
+    if params[:cdg_ordem].present?
+      @contato = Core::Contato.new(cdg_ordem: params[:cdg_ordem])
+    else
+      @contato = Core::Contato.new
+    end
+  end
+
+  def create
+    @contato = Core::Contato.new(core_contato_params)
+
+    respond_to do |format|
+      if @contato.save
+        format.html { redirect_to core_contatos_path, notice: 'Contatos atualizados com sucesso.' }
+        format.json { render :index, status: :created, location: @contato }
+      else
+        format.html { render :new }
+        format.json { render json: @contato.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
@@ -15,9 +37,13 @@ class Core::ContatosController < ApplicationController
   end
 
   private
-    def set_contato
-      @contato = Core::Contato.find(params[:id])
-    end
+  def core_contato_params
+    params.require(:core_contato).permit(:cdg_ordem, :end_telefone, :end_email)
+  end
+
+  def set_contato
+    @contato = Core::Contato.find(params[:id])
+  end
 
   def autorizacao
     unless user_signed_in?#Devise Method
