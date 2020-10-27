@@ -25,6 +25,11 @@
                         <%= link_to new_core_contato_path(cdg_ordem: pessoa.cdg_ordem), method: :get do %>
                           Edit
                         <% end unless pessoa&.core_contato.present? %>
+
+                        <%= link_to edit_core_contato_path(id: pessoa&.core_contato&.id), method: :get do %>
+                          Edit
+                        <% end if pessoa&.core_contato.present? %>
+                        
                       </td> 
                       <% end %>                      
       <% end %>

@@ -1,6 +1,6 @@
 class Core::ContatosController < ApplicationController
   before_action :autorizacao, only: [:destroy]
-  before_action :set_contato, only: [:destroy]
+  before_action :set_contato, only: [:destroy, :edit, :update]
 
   def index
     @pessoas = Core::Pessoal.all
@@ -14,6 +14,9 @@ class Core::ContatosController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def create
     @contato = Core::Contato.new(core_contato_params)
 
@@ -23,6 +26,18 @@ class Core::ContatosController < ApplicationController
         format.json { render :index, status: :created, location: @contato }
       else
         format.html { render :new }
+        format.json { render json: @contato.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @contato.update(core_contato_params)
+        format.html { redirect_to core_contatos_path, notice: 'Contatos atualizados com sucesso.' }
+        format.json { render :show, status: :ok, location: @contato }
+      else
+        format.html { render :edit }
         format.json { render json: @contato.errors, status: :unprocessable_entity }
       end
     end
