@@ -1,44 +1,39 @@
-<%= form_with(model: core_contato, local: true) do |form| %>
-  <% if core_contato.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(core_contato.errors.count, "error") %> prohibited this core_contato from being saved:</h2>
-
-      <ul>
-      <% core_contato.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= form.label :cdg_ordem %>
-    <%= form.number_field :cdg_ordem, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :end_telefone %>
-    <%= form.number_field :end_telefone, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :end_email %>
-    <%= form.text_field :end_email, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <% if core_contato.persisted? %>
-      <div class="float-right">
-        <%= link_to 'Destroy', core_contato, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+<%= form_with(model: contato, local: true) do |form| %>
+    <% if contato.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(contato.errors.count, "error") %> proibem este contato de ser salvo:</h2>
+        <ul>
+        <% contato.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
       </div>
     <% end %>
-
-    <%= form.submit class: 'btn btn-primary' %>
-
-    <% if core_contato.persisted? %>
-      <%= link_to "Cancel", core_contato, class: "btn btn-link" %>
-    <% else %>
-      <%= link_to "Cancel", core_contatos_path, class: "btn btn-link" %>
-    <% end %>
+  
+    <div class="form-group">
+      <%= form.label :cdg_ordem, value: "Servidor:" %>
+      <%= form.label :cdg_ordem, value: form.object.core_pessoal.nme_pessoa %>
+      <%= form.hidden_field :cdg_ordem %>
+    </div>
+  <div class="row">
+    <div class="form-group col-md-4">
+      <%= form.label :end_telefone %>
+      <%= form.number_field :end_telefone, class: 'form-control' %>
+    </div>
+  
+    <div class="form-group col-md-8">
+      <%= form.label :end_email %>
+      <%= form.email_field :end_email, class: 'form-control' %>
+    </div>
   </div>
-<% end %>
+  
+     <div class="form-group"> 
+      <%= form.submit "Atualizar contatos", class: 'btn btn-primary' %>
+  
+      <% if contato.persisted? %>
+        <%= link_to "Cancel", contato, class: "btn btn-link" %>
+      <% else %>
+        <%= link_to "Cancel", core_contatos_path, class: "btn btn-link" %>
+      <% end %>
+    </div>
+  <% end %>
