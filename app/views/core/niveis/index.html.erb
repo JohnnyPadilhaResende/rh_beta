@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Core_niveis</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_core_nivei_path, class: 'btn btn-primary' do %>
+    Add New Nivel
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+
+            <th>XP</th>
+            <th>Cdg Ordem</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @core_niveis.each do |core_nivel| %>
+        <%= content_tag :tr, id: dom_id(core_nivel), class: dom_class(core_nivel) do %>
+          
+                      <td><%= core_nivel.xp %></td>
+                      <td><%= core_nivel.cdg_ordem %></td>
+          
+            <td><%= link_to 'Show', core_nivel %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

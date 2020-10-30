@@ -1,0 +1,39 @@
+<%= form_with(model: core_nivel, local: true) do |form| %>
+  <% if core_nivel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(core_nivel.errors.count, "error") %> prohibited this core_nivel from being saved:</h2>
+
+      <ul>
+      <% core_nivel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :cdg_ordem %>
+    <%= form.number_field :cdg_ordem, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :xp %>
+    <%= form.number_field :xp, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <% if core_nivel.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', core_nivel, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if core_nivel.persisted? %>
+      <%= link_to "Cancel", core_nivel, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", core_nivei_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>
