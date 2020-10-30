@@ -1,13 +1,25 @@
 <%= form_for @core_nivel, url: core_niveis_path do |form| %>
+    <% if @core_nivel.errors.any? %>
+        <div id="error_explanation">
+        <h2><%= pluralize(@core_nivel.errors.count, "error") %> prohibited this core_nivel from being saved:</h2>
 
-    <%= form.label :cdg_ordem %>
-    <%= form.number_field :cdg_ordem, class: 'form-control' %>
+        <ul>
+        <% @core_nivel.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+        </ul>
+        </div>
+    <% end %>
 
-    <br/>
+    <div class="form-group">
+        <%= form.label :cdg_ordem %>
+        <%= form.number_field :cdg_ordem, class: 'form-control' %>
+    </div>
 
-    <%= form.label :xp %>
-    <%= form.number_field :xp, class: 'form-control' %>
-
+    <div class="form-group">
+        <%= form.label :xp %>
+        <%= form.number_field :xp, class: 'form-control' %>
+    </div>
 
     <%= form.submit class: 'btn btn-primary' %>
 <% end %>

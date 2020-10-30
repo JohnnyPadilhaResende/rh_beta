@@ -1,0 +1,17 @@
+<div class="page-header">
+  <%= link_to core_niveis_path, class: 'btn btn-default' do %>
+    All Core_niveis
+  <% end %>
+  <%= link_to edit_core_nivel_path(@core_nivel), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show core_nivel</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Cdg ordem:</dt>
+  <dd><%= @core_nivel.cdg_ordem %></dd>
+
+  <dt>Xp :</dt>
+  <dd><%= @core_nivel.xp %></dd>
+</dl>

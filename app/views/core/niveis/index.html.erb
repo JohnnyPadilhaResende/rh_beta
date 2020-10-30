@@ -1,13 +1,41 @@
 
 
-<%= link_to new_core_nivei_path do %>
-    novo nível
-    <% end %>
 
+<div class="row">
+    <div class="col-sm-6">
+        <h1>Core_nivel</h1>
+    </div>
 
-    <br/>
-    
-<% @niveis.each do |nvl| %>
-    <%= nvl.xp %>
-    <br/>
-<% end %>
+    <div class="col-sm-6 text-right">
+        <%= link_to new_core_nivel_path, class: 'btn btn-primary' do %>
+        Novo Nível
+        <% end %>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Cdg ordem</th>
+                <th>Xp</th>
+                
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @core_niveis.each do |core_nivel| %>
+                <%= content_tag :tr, id: dom_id(core_nivel), class: dom_class(core_nivel) do %>
+                    
+
+                    <td><%= core_nivel.cdg_ordem %></td>
+                    <td><%= core_nivel.xp %></td>
+                    
+                    <td><%= link_to 'Show', core_nivel %></td>
+                    
+                <% end %>
+            <% end %>
+        </tbody>
+    </table>
+</div>

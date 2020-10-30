@@ -6,4 +6,9 @@ class Core::Pessoal < ApplicationRecord
   foreign_key: :cdg_ordem, 
   primary_key: :cdg_ordem
   
+
+  has_one :core_nivel, 
+  class_name: "Core::Nivel", 
+  foreign_key: :cdg_ordem, 
+  primary_key: :cdg_ordem
 end
