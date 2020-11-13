@@ -1,0 +1,74 @@
+<%= form_with(model: core_departamento, local: true) do |form| %>
+  <% if core_departamento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(core_departamento.errors.count, "error") %> prohibited this core_departamento from being saved:</h2>
+
+      <ul>
+      <% core_departamento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :nme_dpto %>
+    <%= form.text_field :nme_dpto, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :vagas %>
+    <%= form.number_field :vagas, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cdg_ordem_servidores %>
+    <%= form.number_field :cdg_ordem_servidores, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cdg_ordem_chefe %>
+    <%= form.number_field :cdg_ordem_chefe, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :dta_inicio_dpto %>
+    <%= form.date_select :dta_inicio_dpto, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :dta_fim_dpto %>
+    <%= form.date_select :dta_fim_dpto, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :vagas_dispo %>
+    <%= form.number_field :vagas_dispo, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cdg_dpto %>
+    <%= form.number_field :cdg_dpto, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cdg_dpto_pai %>
+    <%= form.number_field :cdg_dpto_pai, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <% if core_departamento.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', core_departamento, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if core_departamento.persisted? %>
+      <%= link_to "Cancel", core_departamento, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", core_departamentos_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

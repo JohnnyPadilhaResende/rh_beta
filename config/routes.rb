@@ -2,28 +2,22 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
   namespace :core do
-    resources :contatos
+    resources :departamentos
   end
   namespace :core do
+    resources :funcaos
+  end
+  namespace :core do
+    resources :contatos
     resources :instrucoes
-  end
-  namespace :core do
     resources :contatos
-  end
-  namespace :core do
     resources :enderecos
-  end
-  namespace :core do
     resources :funcionals
-  end
-  namespace :core do
     resources :pessoals
-  end
-  namespace :core do
     resources :niveis
   end
   
-  resources :testes
+
 
   get '/privacy', to: 'home#privacy'
   get '/terms', to: 'home#terms'

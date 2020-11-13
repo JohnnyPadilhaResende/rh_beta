@@ -1,0 +1,39 @@
+<div class="page-header">
+  <%= link_to core_departamentos_path, class: 'btn btn-default' do %>
+    All Core_departamentos
+  <% end %>
+  <%= link_to edit_core_departamento_path(@core_departamento), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show core_departamento</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Nme dpto:</dt>
+  <dd><%= @core_departamento.nme_dpto %></dd>
+
+  <dt>Vagas:</dt>
+  <dd><%= @core_departamento.vagas %></dd>
+
+  <dt>Cdg ordem servidores:</dt>
+  <dd><%= @core_departamento.cdg_ordem_servidores %></dd>
+
+  <dt>Cdg ordem chefe:</dt>
+  <dd><%= @core_departamento.cdg_ordem_chefe %></dd>
+
+  <dt>Dta inicio dpto:</dt>
+  <dd><%= @core_departamento.dta_inicio_dpto %></dd>
+
+  <dt>Dta fim dpto:</dt>
+  <dd><%= @core_departamento.dta_fim_dpto %></dd>
+
+  <dt>Vagas dispo:</dt>
+  <dd><%= @core_departamento.vagas_dispo %></dd>
+
+  <dt>Cdg dpto:</dt>
+  <dd><%= @core_departamento.cdg_dpto %></dd>
+
+  <dt>Cdg dpto pai:</dt>
+  <dd><%= @core_departamento.cdg_dpto_pai %></dd>
+
+</dl>

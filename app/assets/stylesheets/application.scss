@@ -4,9 +4,12 @@
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&lang=en");
+
 @import "bootstrap";
 @import "jumpstart/sticky-footer";
 @import "jumpstart/announcements";
+@import "admin-lte/dist/css/adminlte";
 
 // Fixes bootstrap nav-brand container overlap
 @include media-breakpoint-down(xs) {

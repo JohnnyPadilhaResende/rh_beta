@@ -1,6 +1,6 @@
 class CreateCoreEnderecos < ActiveRecord::Migration[6.0]
   def change
-    create_table "core.enderecos" do |t|
+    create_table 'core.enderecos' do |t|
       t.integer :cdg_ordem
       t.string :nme_logradouro
       t.integer :cdg_logradouro
