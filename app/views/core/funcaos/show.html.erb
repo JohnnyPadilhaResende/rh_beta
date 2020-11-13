@@ -1,0 +1,24 @@
+<div class="page-header">
+  <%= link_to core_funcaos_path, class: 'btn btn-default' do %>
+    All Core_funcaos
+  <% end %>
+  <%= link_to edit_core_funcao_path(@core_funcao), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show core_funcao</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Cdg funcao:</dt>
+  <dd><%= @core_funcao.cdg_funcao %></dd>
+
+  <dt>Nme funcao:</dt>
+  <dd><%= @core_funcao.nme_funcao %></dd>
+
+  <dt>Dta inicio funcao:</dt>
+  <dd><%= @core_funcao.dta_inicio_funcao %></dd>
+
+  <dt>Dta fim funcao:</dt>
+  <dd><%= @core_funcao.dta_fim_funcao %></dd>
+
+</dl>

@@ -1,0 +1,45 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Clientes</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_cliente_path, class: 'btn btn-primary' do %>
+    Add New Cliente
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th>Nome</th>
+            <th>Cpf</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @clientes.each do |cliente| %>
+        <%= content_tag :tr, id: dom_id(cliente), class: dom_class(cliente) do %>
+          
+
+                      <td><%= cliente.nome %></td>
+                      <td><%= cliente.cpf %></td>
+          
+          
+            <td><%= link_to 'Show', cliente %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

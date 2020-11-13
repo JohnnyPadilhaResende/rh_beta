@@ -1,0 +1,44 @@
+<%= form_with(model: core_servidores_departamento, local: true) do |form| %>
+  <% if core_servidores_departamento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(core_servidores_departamento.errors.count, "error") %> prohibited this core_servidores_departamento from being saved:</h2>
+
+      <ul>
+      <% core_servidores_departamento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :cdg_ordem %>
+    <%= form.number_field :cdg_ordem, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cdg_dpto %>
+    <%= form.text_field :cdg_dpto, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :integer %>
+    <%= form.text_field :integer, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <% if core_servidores_departamento.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', core_servidores_departamento, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if core_servidores_departamento.persisted? %>
+      <%= link_to "Cancel", core_servidores_departamento, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", core_servidores_departamentos_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

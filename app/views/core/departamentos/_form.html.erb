@@ -17,18 +17,23 @@
   </div>
 
   <div class="form-group">
+    <%= form.label :cdg_dpto %>
+    <%= form.number_field :cdg_dpto, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cdg_dpto_pai %>
+    <%= form.number_field :cdg_dpto_pai, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
     <%= form.label :vagas %>
     <%= form.number_field :vagas, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= form.label :cdg_ordem_servidores %>
-    <%= form.number_field :cdg_ordem_servidores, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :cdg_ordem_chefe %>
-    <%= form.number_field :cdg_ordem_chefe, class: 'form-control' %>
+    <%= form.label :vagas_dispo %>
+    <%= form.number_field :vagas_dispo, class: 'form-control' %>
   </div>
 
   <div class="form-group">
@@ -42,18 +47,8 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :vagas_dispo %>
-    <%= form.number_field :vagas_dispo, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :cdg_dpto %>
-    <%= form.number_field :cdg_dpto, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :cdg_dpto_pai %>
-    <%= form.number_field :cdg_dpto_pai, class: 'form-control' %>
+    <%= form.label :cdg_ordem_chefe %>
+    <%= form.number_field :cdg_ordem_chefe, class: 'form-control' %>
   </div>
 
   <div class="form-group">

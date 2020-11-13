@@ -69,6 +69,7 @@ class Core::DepartamentosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def core_departamento_params
-      params.require(:core_departamento).permit(:nme_dpto, :vagas, :cdg_ordem_servidores, :cdg_ordem_chefe, :dta_inicio_dpto, :dta_fim_dpto, :vagas_dispo, :cdg_dpto, :cdg_dpto_pai)
+      params.require(:core_departamento).permit(:nme_dpto, :vagas, :cdg_ordem_chefe, :dta_inicio_dpto,
+                                                :dta_fim_dpto, :vagas_dispo, :cdg_dpto, :cdg_dpto_pai)
     end
 end

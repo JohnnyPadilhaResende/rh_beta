@@ -69,6 +69,6 @@ class Core::FuncaosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def core_funcao_params
-      params.fetch(:core_funcao, {})
+      params.require(:core_funcao).permit(:cdg_funcao, :nme_funcao, :dta_inicio_funcao, :dta_fim_funcao)
     end
 end

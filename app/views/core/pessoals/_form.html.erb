@@ -26,14 +26,26 @@
     <%= form.text_field :nme_pessoa, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :sexo %>
-    <%= form.number_field :sexo, class: 'form-control' %>
-  </div>
+  <table>
+    <tr>
+      <th>
+        <div class="form-group">
+          <%= form.label :sexo %>
+          <%= form.number_field :sexo, class: 'form-control' %>
+        </div>
+      </th>
+      <th>
+        <div class="form-group">
+          <%= form.label :dta_nascimento %>
+          <%= form.date_select :dta_nascimento, class: 'form-control' %>
+        </div>
+      </th>
+    </tr>
+  </table>
 
   <div class="form-group">
-    <%= form.label :dta_nascimento %>
-    <%= form.date_select :dta_nascimento, class: 'form-control' %>
+    <%= form.label :cdg_funcao %>
+    <%= form.number_field :cdg_funcao, class: 'form-control' %>
   </div>
 
   <div class="form-group">

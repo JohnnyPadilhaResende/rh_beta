@@ -1,0 +1,21 @@
+<div class="page-header">
+  <%= link_to core_servidores_departamentos_path, class: 'btn btn-default' do %>
+    All Core_servidores_departamentos
+  <% end %>
+  <%= link_to edit_core_servidores_departamento_path(@core_servidores_departamento), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show core_servidores_departamento</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Cdg ordem:</dt>
+  <dd><%= @core_servidores_departamento.cdg_ordem %></dd>
+
+  <dt>Cdg dpto:</dt>
+  <dd><%= @core_servidores_departamento.cdg_dpto %></dd>
+
+  <dt>Integer:</dt>
+  <dd><%= @core_servidores_departamento.integer %></dd>
+
+</dl>

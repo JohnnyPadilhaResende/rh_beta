@@ -1,0 +1,1 @@
+json.partial! "core_servidores_departamentos/core_servidores_departamento", core_servidores_departamento: @core_servidores_departamento

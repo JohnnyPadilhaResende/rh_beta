@@ -1,0 +1,49 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Core_funcaos</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_core_funcao_path, class: 'btn btn-primary' do %>
+    Add New Funcao
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th>Cdg funcao</th>
+            <th>Nme funcao</th>
+            <th>Dta inicio funcao</th>
+            <th>Dta fim funcao</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @core_funcaos.each do |core_funcao| %>
+        <%= content_tag :tr, id: dom_id(core_funcao), class: dom_class(core_funcao) do %>
+          
+
+                      <td><%= core_funcao.cdg_funcao %></td>
+                      <td><%= core_funcao.nme_funcao %></td>
+                      <td><%= core_funcao.dta_inicio_funcao %></td>
+                      <td><%= core_funcao.dta_fim_funcao %></td>
+          
+          
+            <td><%= link_to 'Show', core_funcao %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
