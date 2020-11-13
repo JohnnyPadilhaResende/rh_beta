@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 202011111838280) do
+ActiveRecord::Schema.define(version: 2020_11_13_213344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,36 +45,6 @@ ActiveRecord::Schema.define(version: 202011111838280) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "clientes", force: :cascade do |t|
-    t.string "nome"
-    t.string "cpf"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "core_departamentos", force: :cascade do |t|
-    t.string "nme_dpto"
-    t.integer "vagas"
-    t.integer "cdg_ordem_servidores"
-    t.integer "cdg_ordem_chefe"
-    t.date "dta_inicio_dpto"
-    t.date "dta_fim_dpto"
-    t.integer "vagas_dispo"
-    t.integer "cdg_dpto"
-    t.integer "cdg_dpto_pai"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "core_funcaos", force: :cascade do |t|
-    t.integer "cdg_funcao"
-    t.string "nme_funcao"
-    t.date "dta_inicio_funcao"
-    t.date "dta_fim_funcao"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -84,13 +54,6 @@ ActiveRecord::Schema.define(version: 202011111838280) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
-  end
-
-  create_table "nested_clientes", force: :cascade do |t|
-    t.string "nome"
-    t.string "cpf"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "notifications", force: :cascade do |t|
@@ -118,13 +81,8 @@ ActiveRecord::Schema.define(version: 202011111838280) do
     t.index ["user_id"], name: "index_services_on_user_id"
   end
 
-  create_table "telefones", force: :cascade do |t|
-    t.string "tipo"
-    t.string "num"
-    t.bigint "cliente_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["cliente_id"], name: "index_telefones_on_cliente_id"
+  create_table "testes", force: :cascade do |t|
+    t.string "nome"
   end
 
   create_table "users", force: :cascade do |t|
@@ -145,5 +103,4 @@ ActiveRecord::Schema.define(version: 202011111838280) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "services", "users"
-  add_foreign_key "telefones", "clientes"
 end
