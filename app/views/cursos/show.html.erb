@@ -1,0 +1,33 @@
+<div class="page-header">
+  <%= link_to cursos_path, class: 'btn btn-default' do %>
+    All Cursos
+  <% end %>
+  <%= link_to edit_curso_path(@curso), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show curso</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Nome:</dt>
+  <dd><%= @curso.nome %></dd>
+
+  <dt>Cdg ordem instrutor:</dt>
+  <dd><%= @curso.cdg_ordem_instrutor %></dd>
+
+  <dt>Data inicio:</dt>
+  <dd><%= @curso.data_inicio %></dd>
+
+  <dt>Data fim:</dt>
+  <dd><%= @curso.data_fim %></dd>
+
+  <dt>Numero vagas:</dt>
+  <dd><%= @curso.numero_vagas %></dd>
+
+  <dt>Numero vagas ocupadas:</dt>
+  <dd><%= @curso.numero_vagas_ocupadas %></dd>
+
+  <dt>Nota:</dt>
+  <dd><%= @curso.nota %></dd>
+
+</dl>

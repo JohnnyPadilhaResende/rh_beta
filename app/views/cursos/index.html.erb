@@ -1,0 +1,55 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Cursos</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_curso_path, class: 'btn btn-primary' do %>
+    Add New Curso
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th>Nome</th>
+            <th>Cdg ordem instrutor</th>
+            <th>Data inicio</th>
+            <th>Data fim</th>
+            <th>Numero vagas</th>
+            <th>Numero vagas ocupadas</th>
+            <th>Nota</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @cursos.each do |curso| %>
+        <%= content_tag :tr, id: dom_id(curso), class: dom_class(curso) do %>
+          
+
+                      <td><%= curso.nome %></td>
+                      <td><%= curso.cdg_ordem_instrutor %></td>
+                      <td><%= curso.data_inicio %></td>
+                      <td><%= curso.data_fim %></td>
+                      <td><%= curso.numero_vagas %></td>
+                      <td><%= curso.numero_vagas_ocupadas %></td>
+                      <td><%= curso.nota %></td>
+          
+          
+            <td><%= link_to 'Show', curso %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

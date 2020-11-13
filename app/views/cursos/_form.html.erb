@@ -1,0 +1,75 @@
+<%= form_with(model: curso, local: true) do |form| %>
+  <% if curso.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(curso.errors.count, "error") %> prohibited this curso from being saved:</h2>
+
+      <ul>
+      <% curso.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :nome %>
+    <%= form.text_field :nome, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cdg_ordem_instrutor %>
+    <%= form.number_field :cdg_ordem_instrutor, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :data_inicio %>
+    <%= form.date_select :data_inicio, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :data_fim %>
+    <%= form.date_select :data_fim, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :numero_vagas %>
+    <%= form.number_field :numero_vagas, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :numero_vagas_ocupadas %>
+    <%= form.number_field :numero_vagas_ocupadas, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :nota %>
+    <%= form.text_field :nota, class: 'form-control' %>
+  </div>
+
+  <div id="alunos">
+  <%= form.fields_for :pessoas_cursos do |pessoa| %>
+    <%= render 'pessoas_curso_fields', f: pessoa %>
+  <% end %>
+
+  <div class="links">
+    <%= link_to_add_association 'add pessoa', form, :pessoas_cursos %>
+    <br><br>
+  </div>
+</div>
+
+  <div class="form-group">
+    <% if curso.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', curso, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if curso.persisted? %>
+      <%= link_to "Cancel", curso, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", cursos_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

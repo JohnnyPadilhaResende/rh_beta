@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :cursos
   namespace :core do
     resources :instrucoes
     resources :contatos
